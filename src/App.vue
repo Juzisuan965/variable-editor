@@ -1,56 +1,55 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import AIVariableEditor from './components/AIVariableEditor.vue'
-import type { VariableType } from './components/types';
+import { ref, watch } from "vue";
+import AIVariableEditor from "./components/AIVariableEditor.vue";
+import type { VariableType } from "./components/types";
 
 const variables = ref<VariableType[]>([
   {
-    label: '输入',
-    value: 'input',
+    label: "输入",
+    value: "input",
   },
   {
-    label: '输出',
-    value: 'output',
+    label: "输出",
+    value: "output",
   },
   {
-    label: '用户特征',
-    value: 'user_feature',
+    label: "用户特征",
+    value: "user_feature",
     children: [
       {
-        label: '身高',
-        value: '1',
+        label: "身高",
+        value: "1",
       },
       {
-        label: '体重',
-        value: '2',
+        label: "体重",
+        value: "2",
       },
       {
-        label: '年龄',
-        value: '3',
+        label: "年龄",
+        value: "3",
       },
     ],
   },
   {
-    label: '内置变量',
-    value: 'builtin_variable',
+    label: "内置变量",
+    value: "builtin_variable",
     children: [
       {
-        label: '当前时间',
-        value: 'current_time',
+        label: "当前时间",
+        value: "current_time",
       },
       {
-        label: '长期记忆',
-        value: 'long_term_memory',
+        label: "长期记忆",
+        value: "long_term_memory",
       },
     ],
   },
-])
-const value = ref<string>('')
+]);
+const value = ref<string>("");
 
 watch(value, (newVal) => {
-  console.log(newVal)
-})
-
+  console.log(newVal);
+});
 </script>
 
 <template>
