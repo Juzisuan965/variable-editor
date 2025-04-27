@@ -1,1 +1,6 @@
-export { default as AIVariableEditor } from './AIVariableEditor.vue'
+export { default as VariableEditor } from "./AIVariableEditor.vue";
+export {
+  parseRichTextToContent,
+  parseRichTextEditorToString,
+  parseStringToRichTextEditor,
+} from "../utils";
