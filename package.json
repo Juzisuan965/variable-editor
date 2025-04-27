@@ -1,8 +1,28 @@
 {
-  "name": "ai-variable-editor",
-  "private": true,
-  "version": "0.0.0",
+  "name": "variable-editor",
+  "private": false,
+  "version": "0.0.0-alpha.1",
   "type": "module",
+  "module": "dist/variable-editor.es.js",
+  "files": [
+    "dist"
+  ],
+  "author": "xiaoqiang.yao",
+  "license": "MIT",
+  "description": "rich text editor for insertion of variables in ai workflow",
+  "homepage": "https://github.com/Juzisuan965/variable-editor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Juzisuan965/variable-editor.git"
+  },
+  "keywords": [
+    "rich text",
+    "variable",
+    "editor",
+    "ai",
+    "mention",
+    "workflow"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
