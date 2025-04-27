@@ -12,7 +12,7 @@ import Text from "@tiptap/extension-text";
 import { Editor, EditorContent } from "@tiptap/vue-3";
 import { onBeforeUnmount, watch, ref } from "vue";
 import {
-  parseRichTextEditorToJSON,
+  parseStringToRichTextEditor,
   parseRichTextEditorToString,
 } from "../utils";
 import type { VariableType } from "./types";
@@ -79,9 +79,7 @@ watch(
   () => props.modelValue,
   (newVal) => {
     // @ts-ignore
-    editor.commands.setContent(
-      parseRichTextEditorToJSON(newVal, props.variables)
-    );
+    editor.commands.setContent(parseStringToRichTextEditor(newVal));
   },
   {
     immediate: true,

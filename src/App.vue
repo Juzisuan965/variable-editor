@@ -45,7 +45,9 @@ const variables = ref<VariableType[]>([
     ],
   },
 ]);
-const value = ref<string>("");
+const value = ref<string>(
+  "{{#input.输入#}} 不为空，且{{#builtin_variable:long_term_memory.内置变量:长期记忆#}} 开启，筛选出{{#user_feature:3.用户特征:年龄#}} 大于20岁。如果{{#builtin_variable:long_term_memory.内置变量:长期记忆#}} 未开启，则{{#output.输出#}} '请配置参数'"
+);
 
 watch(value, (newVal) => {
   console.log(newVal);

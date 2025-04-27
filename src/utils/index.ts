@@ -1,5 +1,4 @@
 import type { JSONContent } from "@tiptap/vue-3";
-import type { VariableType } from "../components/types";
 
 export const parseRichTextEditorToString = (jsonContent: JSONContent) => {
   let text = "";
@@ -17,31 +16,7 @@ export const parseRichTextEditorToString = (jsonContent: JSONContent) => {
   return text;
 };
 
-const getName = (key: string, value: string, variables: VariableType[]) => {
-  if (key === FilterCondition.satisfaction) {
-    return `${
-      satisfactionList.value.find((item) => item.id === value)?.name ||
-      descDict.value[value]
-    }<<$$>>${value}`;
-  } else if (key === FilterCondition.wecom_ids) {
-    return `${
-      wecomList.value.find((item) => item.id === value)?.name ||
-      descDict.value[value]
-    }<<$$>>${value}`;
-  } else if (key === FilterCondition.wework_labels) {
-    return `${
-      labelsList.value.find((item) => item.id === value)?.name ||
-      descDict.value[value]
-    }<<$$>>${value}`;
-  } else {
-    return FilterConditionKeyMap[key as FilterCondition];
-  }
-};
-
-export const parseRichTextEditorToJSON = (
-  text: string,
-  variables: VariableType[]
-): JSONContent => {
+export const parseStringToRichTextEditor = (text: string): JSONContent => {
   const doc: JSONContent = {
     type: "doc",
     content: [
@@ -75,13 +50,12 @@ export const parseRichTextEditorToJSON = (
     // 处理标签内容
     const tagContent = match[1];
     const [key, value] = tagContent.split(".");
-    let label = variables.find((item) => item.value === key)?.label || "";
 
     doc.content![0].content!.push({
       type: "mention",
       attrs: {
         id: key,
-        label: label,
+        label: value,
       },
     });
 
@@ -99,11 +73,8 @@ export const parseRichTextEditorToJSON = (
   return doc;
 };
 
-export const parseRichTextToContent = (
-  text: string,
-  variables: VariableType[]
-) => {
-  const json = parseRichTextEditorToJSON(text, variables);
+export const parseRichTextToContent = (text: string) => {
+  const json = parseStringToRichTextEditor(text);
   let content = "";
   if (!json.content || !json.content[0].content) return "";
   json.content[0].content?.forEach((item: any) => {
