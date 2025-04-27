@@ -13,9 +13,18 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      external: ["vue"],
+      external: [
+        "vue",
+        "@tiptap/core",
+        "@tiptap/extension-mention",
+        "@tiptap/starter-kit",
+        "@tiptap/suggestion",
+        "@tiptap/vue-3",
+      ],
       output: {
-        globals: { vue: "Vue" },
+        globals: {
+          vue: "Vue",
+        },
       },
     },
   },
