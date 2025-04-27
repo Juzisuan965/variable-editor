@@ -56,12 +56,20 @@ watch(value, (newVal) => {
 </script>
 
 <template>
-  <AIVariableEditor :variables="variables" v-model="value" />
-  <div style="max-width: 500px; overflow: hidden; margin-bottom: 20px">
-    数据结构：{{ value }}
-  </div>
-  <div style="max-width: 500px; overflow: hidden">
-    文案：{{ parseRichTextToContent(value) }}
+  <div class="container">
+    <div class="editor-container">
+      <AIVariableEditor :variables="variables" v-model="value" />
+    </div>
+    <div class="data-container">
+      <div>
+        <span>数据结构: </span>
+        <div>{{ value }}</div>
+      </div>
+      <div>
+        <span>文案: </span>
+        <div>{{ parseRichTextToContent(value) }}</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -77,5 +85,33 @@ watch(value, (newVal) => {
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.container {
+  width: 800px;
+  height: 500px;
+  padding: 20px;
+  border: 1px solid #ebe7e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .editor-container {
+    width: 100%;
+    height: 300px;
+  }
+  .data-container {
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    span {
+      font-weight: bold;
+      color: #7bc616;
+      margin-right: 8px;
+    }
+  }
 }
 </style>

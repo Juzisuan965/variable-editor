@@ -1,6 +1,6 @@
 <template>
   <div class="rich-text-editor" :style="{ width: width, height: height }">
-    <editor-content :editor="editor" style="width: 100%; height: 200px" />
+    <editor-content :editor="editor" style="width: 100%; height: 100%" />
   </div>
 </template>
 
@@ -20,11 +20,11 @@ import suggestion from "./suggestion.ts";
 const props = defineProps({
   width: {
     type: String,
-    default: "500px",
+    default: "100%",
   },
   height: {
     type: String,
-    default: "300px",
+    default: "100%",
   },
   modelValue: {
     type: String,
