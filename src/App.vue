@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import AIVariableEditor from "./components/AIVariableEditor.vue";
+import { parseRichTextToContent } from "./utils";
 import type { VariableType } from "./components/types";
 
 const variables = ref<VariableType[]>([
@@ -55,15 +56,13 @@ watch(value, (newVal) => {
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
   <AIVariableEditor :variables="variables" v-model="value" />
+  <div style="max-width: 500px; overflow: hidden; margin-bottom: 20px">
+    数据结构：{{ value }}
+  </div>
+  <div style="max-width: 500px; overflow: hidden">
+    文案：{{ parseRichTextToContent(value) }}
+  </div>
 </template>
 
 <style scoped>
