@@ -1,5 +1,8 @@
 # variable-editor
 
+[![中文](https://img.shields.io/badge/lang-中文-red.svg)](README.md)
+[![English](https://img.shields.io/badge/lang-English-blue.svg)](README.en.md)
+
 一个适用于 AI 工作流的富文本变量编辑器组件，基于 Vue 3 和 TipTap 实现。
 
 ## 介绍
@@ -7,6 +10,7 @@
 variable-editor 是一个专为 AI 工作流设计的变量编辑器，它允许用户在富文本中方便地插入、编辑和管理变量。这些变量可以在 AI 提示词中作为占位符使用，便于构建动态的 AI 工作流程。
 
 ### 功能演示
+
 <video src="https://github.com/user-attachments/assets/8cd52d45-4b08-4d00-987b-772273e8ed72" controls width="100%"></video>
 
 ## 特性
