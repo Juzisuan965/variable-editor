@@ -62,11 +62,15 @@ watch(value, (newVal) => {
     </div>
     <div class="data-container">
       <div>
-        <span>数据结构: </span>
+        <span>props: </span>
+        <div>{{ variables }}</div>
+      </div>
+      <div>
+        <span>v-modal: </span>
         <div>{{ value }}</div>
       </div>
       <div>
-        <span>文案: </span>
+        <span>展示文案: </span>
         <div>{{ parseRichTextToContent(value) }}</div>
       </div>
     </div>
