@@ -9,9 +9,9 @@
 
 variable-editor 是一个专为 AI 工作流设计的变量编辑器，它允许用户在富文本中方便地插入、编辑和管理变量。这些变量可以在 AI 提示词中作为占位符使用，便于构建动态的 AI 工作流程。
 
-### 功能演示
+### 截图
+<img width="866" alt="screenshot" src="https://github.com/user-attachments/assets/4fb4f1cc-c7de-40fc-8137-04aed0893ea0" />
 
-<video src="https://github.com/user-attachments/assets/8cd52d45-4b08-4d00-987b-772273e8ed72" controls width="100%"></video>
 
 ## 特性
 
