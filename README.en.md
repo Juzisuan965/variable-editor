@@ -9,9 +9,9 @@ A rich text variable editor component for AI workflows, built with Vue 3 and Tip
 
 variable-editor is a variable editor designed specifically for AI workflows, allowing users to easily insert, edit, and manage variables in rich text. These variables can be used as placeholders in AI prompts, facilitating the construction of dynamic AI workflows.
 
-### Demo
+### Screenshots
+<img width="866" alt="screenshot" src="https://github.com/user-attachments/assets/371ba40c-85b4-400e-9b26-4d12fd755b20" />
 
-<video src="https://github.com/user-attachments/assets/8cd52d45-4b08-4d00-987b-772273e8ed72" controls width="100%"></video>
 
 ## Features
 
